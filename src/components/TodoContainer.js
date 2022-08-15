@@ -5,7 +5,25 @@ import Header from "./Header"
 class TodoContainer extends React.Component {
   handleChange = id => {
     console.log("Clicked  ",id) ; 
-  }  
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    });
+  }
+  delTodo = id => {
+    // console.log("Deletion  ",id) ; 
+      this.setState({
+        todos: [
+          ...this.state.todos.filter(todo => {
+            return todo.id !== id;
+          })
+        ]
+      }) ;
+  }
   state = {
         "todos": [
           {
@@ -41,6 +59,7 @@ return (
       <Header />
       <TodosList todos={this.state.todos} 
       handleChangeProps={this.handleChange} 
+      deleteTodoProps = {this.delTodo}
       />
     </div>
     );

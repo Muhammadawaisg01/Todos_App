@@ -17,14 +17,17 @@ import React from "react"
 function TodoItem(props){
     return <li> < input type="checkbox"  
         checked = {props.todo.completed} 
-        onChange = { function() {
+        onChange = { function() { 
             props.handleChangeProps(props.todo.id) 
             }
         // onChange ={() => {
-        //     console.log("CLICKED") ;
+        //     console.log("CLICKED") ; 
         // }}
         } 
-        /> 
+        />
+        <button  onClick ={() => props.deleteTodoProps(props.todo.id) } > 
+            Delete
+        </button> 
         {props.todo.title} 
     </li>
 }
