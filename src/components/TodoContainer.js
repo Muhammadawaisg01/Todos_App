@@ -37,7 +37,19 @@ class TodoContainer extends React.Component {
       todos:[...this.state.todos, newTodo]
     });
     console.log(item);
-  };
+  }
+  setUpdate = (updatedTitle , id) => {
+    this.setState({
+      todos : this.state.todos.map( todo => {
+        if(todo.id === id){
+            todo.title = updatedTitle;
+        }
+        return todo
+      }),
+    })
+    // console.log(updatedTitle  , id ) 
+  }
+  
   state = {
         "todos": [
           {
@@ -62,8 +74,8 @@ class TodoContainer extends React.Component {
           // group : ["Pakistan"]
         }
        };
-       render() {
-return (
+  render() {
+    return (
     // <ul>
     //   {this.state.todos.map(todo => (
     //     <li>{todo.title}</li>
@@ -78,6 +90,7 @@ return (
         todos = {this.state.todos} 
         handleChangeProps= {this.handleChange} 
         deleteTodoProps  = {this.delTodo}
+        setUpdateProps = {this.setUpdate}
       />
       </div>
     </div>

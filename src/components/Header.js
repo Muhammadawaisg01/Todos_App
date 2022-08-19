@@ -11,10 +11,10 @@ const Header = () => {
             style={{
                 fontSize: "6rem",
                 fontWeight: "600",
-                marginBottom: "2rem",
+                marginBottom: "1rem",
                 lineHeight: "1em",
                 color: "#ececec",
-                textTransform: "lowercase",
+                textTransform: "capitalize",
                 textAlign: "center",
             }}
             >
