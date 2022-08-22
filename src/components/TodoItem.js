@@ -4,7 +4,7 @@ import styles from"./TodoItem.module.css"
 class TodoItem extends React.Component { 
     state = {
         editing : false,
-    }
+    } 
     handleEditing = () => {
         this.setState({
             editing:true,
@@ -24,21 +24,22 @@ class TodoItem extends React.Component {
         textDecoration: "line-through",
     }
     render() { 
-        let viewMode = {}
-        let editMode = {}
+        // const a = localStorage.getItem
+        let viewMode = {} 
+        let editMode = {} 
         if(this.state.editing){
-            viewMode.display ="none"
+            viewMode.display = "none"
         }else{
-            editMode.display ="none"
+            editMode.display = "none"
         }
     const {id, title, completed} = this.props.todo ; 
-        return (
+        return ( 
         <li 
             className = {styles.item}> 
         <div onDoubleClick = {this.handleEditing} 
         style={viewMode}
         > 
-        <input type="checkbox"  
+        <input type="checkbox" 
             checked  = {completed} 
             className={styles.checkbox}
             onChange = { () => { 
@@ -56,7 +57,7 @@ class TodoItem extends React.Component {
                 {title} 
             </span> 
             </div> 
-            <input type="text" className={styles.textInput}
+            <input type="text" className={styles.textInput} 
             style={editMode}
             value={title}
             onChange={ e =>{

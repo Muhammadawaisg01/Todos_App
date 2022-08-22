@@ -25,7 +25,7 @@ class TodoContainer extends React.Component {
             return todo.id !== id ; 
           })
         ]
-      }) ;
+      }) ; 
   }
   addTodoItem = item => {
     const newTodo = {
@@ -49,30 +49,33 @@ class TodoContainer extends React.Component {
     })
     // console.log(updatedTitle  , id ) 
   }
-  
+  // componentDidMount(){ 
+  //   fetch("https://jsonplaceholder.typicode.com/todos?_limit=10") 
+  //   .then(response => response.json()) 
+  //   .then(data => this.setState({ todos : data })) ; 
+  //   // const e = localStorage.getItem("TodoItem");
+  // }
+  componentDidMount() {
+    const temp = localStorage.getItem("todos")
+    const loadedTodos = JSON.parse(temp)
+    if (loadedTodos) {
+      this.setState({
+        todos: loadedTodos
+      })
+    }
+  }
+  componentDidUpdate(prevProp, prevState){  
+    if( prevState.todos !== this.state.todos ) { 
+        const temp = JSON.stringify(this.state.todos) ; 
+        localStorage.setItem("todos", temp);
+        console.log(temp) ;
+    }
+  }
+  componentWillUnmount(){
+    console.log("Cleaning up. ....") ; 
+  }
   state = {
-        "todos": [
-          {
-            id: uuidv4(),
-            title: "Setup development environment",
-            completed: false
-          },
-          {
-            id: uuidv4(),
-            title: "Develop website and add content",
-            completed: false
-          },
-          {
-            id: uuidv4(),
-            title: "Deploy to live server",
-            completed: false
-          }
-        ] ,
-        todos1 : {
-          Name  : "Muhammad Awais",
-          age   : 21,
-          // group : ["Pakistan"]
-        }
+        "todos": [],
        };
   render() {
     return (
