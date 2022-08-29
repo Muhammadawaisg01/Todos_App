@@ -22,7 +22,6 @@ class inputTodo extends Component{
         } else{
             alert("Enter item correctly"); 
         }
-        // console.log(this.state.title); 
     }
     render() {
         return (
@@ -32,7 +31,7 @@ class inputTodo extends Component{
                 onChange={this.onChange}
                 className="input-text"
                 />
-                <div onDoubleClick={this.handleEditing} ></div>
+                <div onDoubleClick={this.handleEditing} ></div> 
                 <br/>
                 {/* <input type = "email" placeholder="...TodoInputEmail" value={this.state.email} 
                 name="email" 

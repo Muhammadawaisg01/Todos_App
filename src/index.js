@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import TodoContainer from "./components/TodoContainer"
+import TodoContainer from "./functionBased/components/TodoContainer"
 
 const element = <h1>Hello from Create React App element</h1>
 
