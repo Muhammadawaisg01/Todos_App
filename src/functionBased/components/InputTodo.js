@@ -1,14 +1,14 @@
-import React, { useState } from "react"
+import React, { useState } from "react" 
 
-const InputTodo = (props) => {
-    const [title, setTitle] = useState("");
-    const [inputText, setinputText] = useState({
-        fname:"" , 
-        lname:"" 
-    } ) 
+const InputTodo = (props) => { 
+    const [title, setTitle] = useState("") ; 
+    // const [inputText, setinputText] = useState( { 
+    //     fname:"" , 
+    //     lname:"" 
+    // } ) 
     
     const onChange = e => { 
-        setTitle (prevTitle => prevTitle = e.target.value )
+        setTitle (prevTitle => prevTitle = e.target.value ) 
     }
 
     const handleSubmit = (e) => {
@@ -31,7 +31,7 @@ const InputTodo = (props) => {
         placeholder="...TodoInputName"
         onChange={onChange}
         />
-        {/* <div onDoubleClick = {this.handleEditing} ></div>  */} 
+        {/* <div onDoubleClick = {this.handleEditing} ></div>   */}
         <br/>
         <button className="input-submit"> Submit </button> 
     </form>
