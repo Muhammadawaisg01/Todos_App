@@ -5,12 +5,14 @@ import { BookList } from "../pages/BookList"
 import About from "../pages/About"
 import NotMatch from "../pages/NotMatch"
 import { Book } from "../pages/Books"
+import Navbar from "./Navbar"
 
 
 const App = () => {
     return (
         <>
-            <nav>
+            <Navbar />
+            {/* <nav>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -24,21 +26,21 @@ const App = () => {
                     {/* <li>
                         <Link to="*">NotMatch</Link>
                     </li> */}
-                </ul>
-            </nav>
-            <Routes>
+            {/* </ul>
+            </nav > */}
+            < Routes >
                 <Route path="/" element={<TodoContainer />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/books">
+                <Route path="/books" element={<BookList />}>
                     <Route index element={<BookList />} />
                     <Route path=":id" element={<Book />} />
                     <Route path="new" element={<Book />} />
                 </Route>
                 <Route path="*" element={<NotMatch />} />
             </Routes >
-            <Routes location="/books">
+            {/* <Routes location="/books">
                 <Route path="/books" element={<h1> Extra Content for books path</h1>} />
-            </Routes>
+            </Routes> */}
         </>
     )
 }
