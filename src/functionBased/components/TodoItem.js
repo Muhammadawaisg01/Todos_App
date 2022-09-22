@@ -22,7 +22,7 @@ const TodoItem = props => {
         textDecoration: "line-through",
     }
 
-    const { completed, id, title } = props.todo
+    const { completed, _id, title } = props.todo
 
     let viewMode = {}
     let editMode = {}
@@ -33,6 +33,7 @@ const TodoItem = props => {
         editMode.display = "none"
     }
     useEffect(() => {
+        console.log(_id)
         return () => {
             console.log("Cleaning up...")
         }
@@ -45,9 +46,9 @@ const TodoItem = props => {
                     type="checkbox"
                     className={styles.checkbox}
                     checked={completed}
-                    onChange={() => props.handleChangeProps(id)}
+                    onChange={() => props.handleChangeProps(_id)}
                 />
-                <button onClick={() => props.deleteTodoProps(id)} >
+                <button onClick={() => props.deleteTodoProps(_id)} >
                     <FaTrash style={{ color: "orangered", fontSize: "16px" }} />
                 </button>
                 <span style={completed ? completedStyle : null}> {title} </span> {/* if condition, if completed = true then mark the line on the text */}
@@ -58,7 +59,7 @@ const TodoItem = props => {
                 className={styles.textInput}
                 value={title}
                 onChange={e => {
-                    props.setUpdateProps(e.target.value, id);
+                    props.setUpdateProps(e.target.value, _id);
                 }}
                 onKeyDown={handleUpdatedDone}
             />
