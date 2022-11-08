@@ -5,21 +5,21 @@ const Header = () => {
     const headerStyle = {
         padding: "20px 0",
         lineHeight: "1.5em",
-      }
+    }
     return (
-        <header style = {headerStyle}>
+        <header style={headerStyle}>
             <h1
-            style={{
-                fontSize: "6rem",
-                fontWeight: "600",
-                marginBottom: "1rem",
-                lineHeight: "1em",
-                color: "#ececec",
-                textTransform: "capitalize",
-                textAlign: "center",
-            }}
+                style={{
+                    fontSize: "6rem",
+                    fontWeight: "600",
+                    marginBottom: "1rem",
+                    lineHeight: "1em",
+                    color: "#ececec",
+                    textTransform: "capitalize",
+                    textAlign: "center",
+                }}
             >
-            TODO Application
+                TODO Application
             </h1>
         </header>
     )

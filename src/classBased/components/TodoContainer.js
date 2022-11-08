@@ -101,3 +101,18 @@ class TodoContainer extends React.Component {
 }
 }
 export default TodoContainer
+  // useEffect(() => { 
+  //   console.log("test run") 
+  //   const temp = localStorage.getItem("todos") ; 
+  //   const loadedTodos = JSON.parse(temp) ; 
+  //   if(loadedTodos) { 
+  //     setTodos(loadedTodos)
+  //   }
+  // },[] ) 
+
+  // useEffect(() => {
+  //   // storing todos items
+  //   console.log("Todos changes")
+  //   const temp = JSON.stringify(todos)
+  //   localStorage.setItem("todos", temp)
+  // }, [todos])
