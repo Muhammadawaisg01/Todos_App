@@ -11,7 +11,7 @@ import Navbar from "./Navbar";
 
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([]); // []
+  const [todos, setTodos] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -32,13 +32,6 @@ const TodoContainer = () => {
         }
       )
   }, [])
-
-  // {
-  //   id: uuidv4(),
-  //   title : "" ,
-  //   completed : false
-  // });
-  // const [id, title, completed] = [todos.id, todos.title, todos.completed] ; 
 
   const handleChange = id => {
     console.log("Clicked  ", id);
@@ -108,33 +101,6 @@ const TodoContainer = () => {
       [...todos, new_todo]
     )
   }
-  // const setUpdate = (updatedTitle, id) => {
-  //   setTodos(
-  //     prevTodo => {
-  //     prevTodo.map(todo => {
-  //       if (todo.id === id) {
-  //         todo.title = updatedTitle
-  //       }
-  //       return todo;
-  //     })
-  //   });
-  // }
-
-  // useEffect(() => { 
-  //   console.log("test run") 
-  //   const temp = localStorage.getItem("todos") ; 
-  //   const loadedTodos = JSON.parse(temp) ; 
-  //   if(loadedTodos) { 
-  //     setTodos(loadedTodos)
-  //   }
-  // },[] ) 
-
-  // useEffect(() => {
-  //   // storing todos items
-  //   console.log("Todos changes")
-  //   const temp = JSON.stringify(todos)
-  //   localStorage.setItem("todos", temp)
-  // }, [todos])
 
   function getInitialTodos() {
     console.log("Getting Initial Todos");
